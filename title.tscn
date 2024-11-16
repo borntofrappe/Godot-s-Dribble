@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://m8rar1je57gg"]
+[gd_scene load_steps=8 format=3 uid="uid://m8rar1je57gg"]
 
+[ext_resource type="Script" path="res://title.gd" id="1_7pk50"]
 [ext_resource type="Texture2D" uid="uid://mwiktrh78780" path="res://assets/art/title/background.png" id="1_vxsjf"]
 [ext_resource type="Texture2D" uid="uid://d36v1ro1hlcbv" path="res://assets/art/title/pointer_0.png" id="2_msx7n"]
 [ext_resource type="Texture2D" uid="uid://ccmd67mj1jry8" path="res://assets/art/title/pointer_1.png" id="3_fj1h3"]
@@ -39,6 +40,7 @@ animations = [{
 }]
 
 [node name="Title" type="Node"]
+script = ExtResource("1_7pk50")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_vxsjf")
