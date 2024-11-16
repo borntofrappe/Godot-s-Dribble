@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://btkue5chgu0ej"]
+[gd_scene load_steps=5 format=3 uid="uid://btkue5chgu0ej"]
 
+[ext_resource type="Script" path="res://score.gd" id="1_1n1cf"]
 [ext_resource type="Texture2D" uid="uid://44lhy1888qnl" path="res://assets/art/background.png" id="1_teu64"]
 [ext_resource type="Texture2D" uid="uid://bky2qchw46yfo" path="res://assets/art/score/dash.png" id="2_fcewt"]
 [ext_resource type="Texture2D" uid="uid://bbs68kr00j5jv" path="res://assets/art/score/decimal_point.png" id="3_axvye"]
 
 [node name="Score" type="Node"]
+script = ExtResource("1_1n1cf")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_teu64")
