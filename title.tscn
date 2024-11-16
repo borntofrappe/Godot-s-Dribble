@@ -1,3 +1,56 @@
-[gd_scene format=3 uid="uid://m8rar1je57gg"]
+[gd_scene load_steps=7 format=3 uid="uid://m8rar1je57gg"]
+
+[ext_resource type="Texture2D" uid="uid://mwiktrh78780" path="res://assets/art/title/background.png" id="1_vxsjf"]
+[ext_resource type="Texture2D" uid="uid://d36v1ro1hlcbv" path="res://assets/art/title/pointer_0.png" id="2_msx7n"]
+[ext_resource type="Texture2D" uid="uid://ccmd67mj1jry8" path="res://assets/art/title/pointer_1.png" id="3_fj1h3"]
+[ext_resource type="Texture2D" uid="uid://cnc51mpph1626" path="res://assets/art/title/pointer_2.png" id="4_ti45v"]
+[ext_resource type="Texture2D" uid="uid://dcunywweql27x" path="res://assets/art/title/pointer_3.png" id="5_ohi0x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5owc5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_msx7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fj1h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_msx7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fj1h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ti45v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ohi0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ti45v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ohi0x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Title" type="Node"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_vxsjf")
+centered = false
+
+[node name="Pointer" type="CanvasGroup" parent="."]
+
+[node name="PointerStart" type="AnimatedSprite2D" parent="Pointer"]
+position = Vector2(15.5, 51)
+sprite_frames = SubResource("SpriteFrames_5owc5")
+
+[node name="PointerEnd" type="AnimatedSprite2D" parent="Pointer"]
+position = Vector2(80.5, 51)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_5owc5")
