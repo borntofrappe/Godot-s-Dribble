@@ -1,10 +1,121 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq15q0fmf8wod"]
+[gd_scene load_steps=15 format=3 uid="uid://bq15q0fmf8wod"]
 
 [ext_resource type="Script" path="res://ranking.gd" id="1_fu2k7"]
 [ext_resource type="Texture2D" uid="uid://f267nwc7r75g" path="res://assets/art/ranking/background.png" id="1_odatd"]
 [ext_resource type="Texture2D" uid="uid://cgeq8aq5ut7wh" path="res://assets/art/ranking/record_1.png" id="2_ssppv"]
 [ext_resource type="Texture2D" uid="uid://ch8ksu6wulxej" path="res://assets/art/ranking/dash.png" id="3_qa86l"]
 [ext_resource type="Texture2D" uid="uid://b68ol5nne4jab" path="res://assets/art/ranking/decimal_point.png" id="4_pk4ke"]
+
+[sub_resource type="Animation" id="Animation_idxxu"]
+resource_name = "slide-in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(97, 19), Vector2(97, 19), Vector2(0, 19)]
+}
+
+[sub_resource type="Animation" id="Animation_6f40o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 19)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ctywy"]
+_data = {
+"RESET": SubResource("Animation_6f40o"),
+"slide-in": SubResource("Animation_idxxu")
+}
+
+[sub_resource type="Animation" id="Animation_83ybp"]
+resource_name = "slide-in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(97, 39), Vector2(97, 39), Vector2(0, 39)]
+}
+
+[sub_resource type="Animation" id="Animation_756a6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 39)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_be7n3"]
+_data = {
+"RESET": SubResource("Animation_756a6"),
+"slide-in": SubResource("Animation_83ybp")
+}
+
+[sub_resource type="Animation" id="Animation_fpslm"]
+resource_name = "slide-in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(97, 59), Vector2(97, 59), Vector2(0, 59)]
+}
+
+[sub_resource type="Animation" id="Animation_8iwhg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 59)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1greg"]
+_data = {
+"RESET": SubResource("Animation_8iwhg"),
+"slide-in": SubResource("Animation_fpslm")
+}
 
 [node name="Ranking" type="Node"]
 script = ExtResource("1_fu2k7")
@@ -51,6 +162,11 @@ position = Vector2(0, -2)
 texture = ExtResource("2_ssppv")
 centered = false
 
+[node name="SlideIn" type="AnimationPlayer" parent="First"]
+libraries = {
+"": SubResource("AnimationLibrary_ctywy")
+}
+
 [node name="Second" type="CanvasGroup" parent="."]
 position = Vector2(0, 39)
 
@@ -89,6 +205,11 @@ position = Vector2(0, -2)
 texture = ExtResource("2_ssppv")
 centered = false
 
+[node name="SlideIn" type="AnimationPlayer" parent="Second"]
+libraries = {
+"": SubResource("AnimationLibrary_be7n3")
+}
+
 [node name="Third" type="CanvasGroup" parent="."]
 position = Vector2(0, 59)
 
@@ -126,3 +247,8 @@ centered = false
 position = Vector2(0, -2)
 texture = ExtResource("2_ssppv")
 centered = false
+
+[node name="SlideIn" type="AnimationPlayer" parent="Third"]
+libraries = {
+"": SubResource("AnimationLibrary_1greg")
+}
