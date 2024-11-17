@@ -23,7 +23,12 @@ var textures_numbers = [
 ]
 
 func _ready():
+	var score = 523
 	var scores = [123, 769]
+	var index = scores.bsearch(score)
+	if index < 3:
+		scores.insert(index, score)
+	
 	var len_scores = len(scores)
 	var records = [$First, $Second, $Third]
 	var z = 0
