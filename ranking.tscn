@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq15q0fmf8wod"]
+
+[ext_resource type="Texture2D" uid="uid://f267nwc7r75g" path="res://assets/art/ranking/background.png" id="1_odatd"]
+[ext_resource type="Texture2D" uid="uid://cgeq8aq5ut7wh" path="res://assets/art/ranking/record_1.png" id="2_ssppv"]
+[ext_resource type="Texture2D" uid="uid://ch8ksu6wulxej" path="res://assets/art/ranking/dash.png" id="3_qa86l"]
+[ext_resource type="Texture2D" uid="uid://b68ol5nne4jab" path="res://assets/art/ranking/decimal_point.png" id="4_pk4ke"]
+
+[node name="Ranking" type="Node"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_odatd")
+centered = false
+
+[node name="First" type="CanvasGroup" parent="."]
+position = Vector2(0, 17)
+
+[node name="Record" type="Sprite2D" parent="First"]
+texture = ExtResource("2_ssppv")
+centered = false
+
+[node name="Tens" type="Sprite2D" parent="First"]
+position = Vector2(33, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Unit" type="Sprite2D" parent="First"]
+position = Vector2(42, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Deca" type="Sprite2D" parent="First"]
+position = Vector2(60, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Centi" type="Sprite2D" parent="First"]
+position = Vector2(69, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Milli" type="Sprite2D" parent="First"]
+position = Vector2(78, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="DecimalPoint" type="Sprite2D" parent="First"]
+position = Vector2(51, 0)
+texture = ExtResource("4_pk4ke")
+centered = false
+
+[node name="Second" type="CanvasGroup" parent="."]
+position = Vector2(0, 37)
+
+[node name="Record" type="Sprite2D" parent="Second"]
+texture = ExtResource("2_ssppv")
+centered = false
+
+[node name="Tens" type="Sprite2D" parent="Second"]
+position = Vector2(33, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Unit" type="Sprite2D" parent="Second"]
+position = Vector2(42, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Deca" type="Sprite2D" parent="Second"]
+position = Vector2(60, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Centi" type="Sprite2D" parent="Second"]
+position = Vector2(69, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Milli" type="Sprite2D" parent="Second"]
+position = Vector2(78, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="DecimalPoint" type="Sprite2D" parent="Second"]
+position = Vector2(51, 0)
+texture = ExtResource("4_pk4ke")
+centered = false
+
+[node name="Third" type="CanvasGroup" parent="."]
+position = Vector2(0, 55)
+
+[node name="Record" type="Sprite2D" parent="Third"]
+position = Vector2(0, 2)
+texture = ExtResource("2_ssppv")
+centered = false
+
+[node name="Tens" type="Sprite2D" parent="Third"]
+position = Vector2(33, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Unit" type="Sprite2D" parent="Third"]
+position = Vector2(42, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Deca" type="Sprite2D" parent="Third"]
+position = Vector2(60, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Centi" type="Sprite2D" parent="Third"]
+position = Vector2(69, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="Milli" type="Sprite2D" parent="Third"]
+position = Vector2(78, 0)
+texture = ExtResource("3_qa86l")
+centered = false
+
+[node name="DecimalPoint" type="Sprite2D" parent="Third"]
+position = Vector2(51, 0)
+texture = ExtResource("4_pk4ke")
+centered = false
