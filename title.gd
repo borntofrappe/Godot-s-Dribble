@@ -16,3 +16,9 @@ func _process(delta):
 		Pointer.position.y = POINTER_Y["play"]
 	elif Input.is_action_just_pressed("down"):
 		Pointer.position.y = POINTER_Y["ranking"]
+	
+	if Input.is_action_just_pressed("a"):
+		if Pointer.position.y == POINTER_Y["play"]:
+			pass # play
+		else:
+			Global.go_to_scene("res://ranking.tscn")

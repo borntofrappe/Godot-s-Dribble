@@ -6,4 +6,10 @@ func format_time(time):
 @onready var Fade = $Overlay/Fade
 
 func _ready():
-	$Overlay/Fade.play("fade-out")
+	Fade.play("fade-out")
+
+func go_to_scene(path):
+	Fade.play("fade-in")
+	await Fade.animation_finished
+	get_tree().change_scene_to_file(path)
+	Fade.play("fade-out")

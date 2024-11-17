@@ -40,3 +40,7 @@ func _ready():
 	if index < 3:
 		var children = records[index].get_children()
 		children[len(children)-1].play("slide-in")
+
+func _process(delta):
+	if Input.is_action_just_pressed("a") or Input.is_action_just_pressed("b"):
+		Global.go_to_scene("res://title.tscn")
