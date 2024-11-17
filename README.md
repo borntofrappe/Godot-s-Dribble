@@ -37,3 +37,17 @@ Missing:
 - art _above_ the score
 
 - a way to receive and pass the score's value
+
+### Ranking
+
+The screen needs to accommodate for multiple scenarios:
+
+- when you go from title to ranking you show the records
+
+  Starting out there are no records, and all slots are filled with the same default `--.---`. Importantly, all slots are also marked with the same `1st` label. As scores are recorded (and these are smaller than the measure describing 60 seconds), these fill the list one after the other. Empty slots do not increase the label on the left.
+
+- when you go from score to ranking, you do so only if your score is better than one of the recorded one, and you are shown where you rank
+
+  In this instance the incoming score is evaluated and slotted in the right place, possibly updating the list by moving down existing values/filling the partial list.
+
+  In this instance there should also be an animation with the incoming score sliding in from the right.
