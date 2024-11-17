@@ -1,8 +1,5 @@
 extends Node
 
-func format_time(time):
-	return "%06.3f" % (time / 1000.0)
-
 var textures_records = [
 	load("res://assets/art/ranking/record_1.png"),
 	load("res://assets/art/ranking/record_2.png"),
@@ -36,7 +33,7 @@ func _ready():
 		var children = records[i].get_children()
 		children[len(children)-2].texture = textures_records[z]
 		if i < len_scores:
-			var chars = format_time(scores[i]).replace(".","")
+			var chars = Global.format_time(scores[i]).replace(".","")
 			for j in len(chars):
 				children[j].texture = textures_numbers[int(chars[j])]
 			z += 1

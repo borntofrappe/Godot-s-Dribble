@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbnsgnml4qr22"]
+[gd_scene load_steps=6 format=3 uid="uid://dbnsgnml4qr22"]
+
+[ext_resource type="Script" path="res://global.gd" id="1_6mekd"]
 
 [sub_resource type="Animation" id="Animation_jpou0"]
 length = 0.001
@@ -17,6 +19,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_yyl4a"]
 resource_name = "fade-in"
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -24,7 +27,7 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -32,6 +35,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_uc2ku"]
 resource_name = "fade-out"
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -39,7 +43,7 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -53,7 +57,7 @@ _data = {
 }
 
 [node name="Global" type="CanvasLayer"]
-visible = false
+script = ExtResource("1_6mekd")
 
 [node name="Overlay" type="ColorRect" parent="."]
 offset_right = 97.0
