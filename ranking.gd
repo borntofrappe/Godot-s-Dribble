@@ -20,11 +20,13 @@ var textures_numbers = [
 ]
 
 func _ready():
-	var score = 22
-	var scores = [123, 769]
-	var index = scores.bsearch(score)
-	if index < 3:
-		scores.insert(index, score)
+	var score = 0
+	var scores = []
+	var index = null
+	if score != 0 and score < 60*1000:
+		index = scores.bsearch(score)
+		if index < 3:
+			scores.insert(index, score)
 	
 	var len_scores = len(scores)
 	var records = [$First, $Second, $Third]
@@ -37,7 +39,7 @@ func _ready():
 			for j in len(chars):
 				children[j].texture = textures_numbers[int(chars[j])]
 			z += 1
-	if index < 3:
+	if index:
 		var children = records[index].get_children()
 		children[len(children)-1].play("slide-in")
 
