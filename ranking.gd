@@ -20,7 +20,8 @@ var textures_numbers = [
 ]
 
 func _ready():
-	var score = 0
+	var score = Global.score
+	Global.score = 0
 	var scores = []
 	var index = null
 	if score != 0 and score < 60*1000:
