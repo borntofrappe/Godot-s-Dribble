@@ -41,7 +41,7 @@ func _ready():
 			for j in len(chars):
 				children[j].texture = textures_numbers[int(chars[j])]
 			z += 1
-	if index:
+	if index != null and index < len(records):
 		var children = records[index].get_children()
 		children[len(children)-1].play("slide-in")
 

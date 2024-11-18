@@ -44,3 +44,9 @@ centered = false
 position = Vector2(33, 0)
 texture = ExtResource("3_axvye")
 centered = false
+
+[node name="NextScene" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[connection signal="timeout" from="NextScene" to="." method="_on_next_scene_timeout"]
