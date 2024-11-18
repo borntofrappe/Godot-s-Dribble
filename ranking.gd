@@ -20,29 +20,35 @@ var textures_numbers = [
 ]
 
 func _ready():
-	var score = Global.score
-	Global.score = 0
-	var scores = []
+	var saved_data: SavedData = load(Global.save_path)
+	var record = saved_data.record if saved_data else 0
+	var ranking = saved_data.ranking if saved_data else []
+
 	var index = null
-	if score != 0 and score < 60*1000:
-		index = scores.bsearch(score)
+	if record != 0 and record < 60*1000:
+		index = ranking.bsearch(record)
 		if index < 3:
-			scores.insert(index, score)
+			ranking.insert(index, record)
 	
-	var len_scores = len(scores)
+	var len_ranking = len(ranking)
 	var records = [$First, $Second, $Third]
 	var z = 0
 	for i in range(3):
 		var children = records[i].get_children()
 		children[len(children)-2].texture = textures_records[z]
-		if i < len_scores:
-			var chars = Global.format_time(scores[i]).replace(".","")
+		if i < len_ranking:
+			var chars = Global.format_time(ranking[i]).replace(".","")
 			for j in len(chars):
 				children[j].texture = textures_numbers[int(chars[j])]
 			z += 1
 	if index:
 		var children = records[index].get_children()
 		children[len(children)-1].play("slide-in")
+
+	var new_saved_data:SavedData = SavedData.new()
+	new_saved_data.record = 0
+	new_saved_data.ranking = ranking.slice(0, 3)
+	ResourceSaver.save(new_saved_data, Global.save_path)
 
 func _process(delta):
 	if Input.is_action_just_pressed("a") or Input.is_action_just_pressed("b"):

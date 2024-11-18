@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var title_option = "play"
-var score = 0
+var save_path = "user://savegame.tres"
 
 func format_time(time):
 	return "%06.3f" % (time / 1000.0)

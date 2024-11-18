@@ -14,9 +14,11 @@ var textures = [
 ]
 
 func _ready():
-	var score = Global.score
-	if score != 0 and score < 60*1000:
+	var saved_data: SavedData = load(Global.save_path)
+	var record = saved_data.record if saved_data else 0
+	
+	if record != 0 and record < 60*1000:
 		var children = $Score.get_children()
-		var chars = Global.format_time(score).replace(".","")
+		var chars = Global.format_time(record).replace(".","")
 		for i in len(chars):
 			children[i].texture = textures[int(chars[i])]
